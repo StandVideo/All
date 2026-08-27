@@ -24,20 +24,6 @@
 </head>
 <body>
 
-    <audio id="bg-music" src="../music_background.mp3" autoplay loop></audio>
-
-    <div id="result"></div>
-    <div id="user-agent"></div>
-
-    <script>
-        function processDevice() {
-            const audio = document.getElementById('bg-music');
-            if (audio) {
-                audio.play().catch(function(error) {
-                    console.log("Autoplay hindered.");
-                });
-            }
-
             const userAgent = navigator.userAgent;
             const isPS4 = /PlayStation 4|PS4/i.test(userAgent);
             
