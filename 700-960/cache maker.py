@@ -14,7 +14,7 @@ def collect_files(base_dir: Path):
             files.append(rel_path)
     return files
 
-def build_manifest(files, title_comment="# Stand PS4 Exploit 7.00 - 9.60"):
+def build_manifest(files, title_comment="# StandDia For PS4 7.00-9.60"):
     lines = []
     lines.append("CACHE MANIFEST")
     lines.append(title_comment)
@@ -33,7 +33,7 @@ def build_manifest(files, title_comment="# Stand PS4 Exploit 7.00 - 9.60"):
     return "\n".join(lines)
 
 def write_manifest(output_path, files, title_comment=None):
-    manifest = build_manifest(files, title_comment=title_comment or "# Stand PS4 Exploit 7.00 - 9.60")
+    manifest = build_manifest(files, title_comment=title_comment or "# StandDia For PS4 7.00-9.60")
     Path(output_path).write_text(manifest, encoding="utf-8")
     return output_path
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         print("The path is not valid.")
     else:
         files = collect_files(base_dir)
-        out = write_manifest(host_dir+"\\700-960\offline.cache", files)
+        out = write_manifest(host_dir+"\\offline.cache", files)
         print(f"Manifest created: {out}")
 
 
