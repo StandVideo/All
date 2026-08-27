@@ -29,11 +29,6 @@
     <div id="result"></div>
     <div id="user-agent"></div>
 
-<script>
-window.onload = function () {
-    alert(navigator.userAgent);
-};
-</script>
     <script>
         function processDevice() {
             const audio = document.getElementById('bg-music');
@@ -52,7 +47,7 @@ window.onload = function () {
                     const firmware = parseFloat(fwMatch[1]);
                     if (firmware >= 5.00 && firmware <= 6.72) {
                         setTimeout(() => { window.location.href = "505-672/index.html"; }, 10000);
-                    } else if (firmware >= 10.00 && firmware <= 11.02) {
+                    } else if (firmware >= 7.00 && firmware <= 9.60) {
                         setTimeout(() => { window.location.href = "700-960/index.html"; }, 10000);
                     } else if (firmware >= 10.00 && firmware <= 11.02) {
                         setTimeout(() => { window.location.href = "1000-1102/index.html"; }, 10000);
