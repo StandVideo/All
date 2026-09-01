@@ -61,6 +61,29 @@
                     }
                 }
             }
+
+            // PS5
+            const isPS5 = /PlayStation 5/i.test(userAgent);
+
+            if (isPS5) {
+
+                const fwMatch = userAgent.match(
+                    /PlayStation\s*5\/([\d\.]+)/i
+                );
+
+                if (fwMatch && fwMatch[1]) {
+
+                    const firmware = parseFloat(fwMatch[1]);
+
+                    if (firmware >= 1.00 && firmware <= 5.50) {
+
+                        setTimeout(() => {
+                            window.location.href =
+                                "https://standvideo.github.io/PS5-1.00-5.50/index.html";
+                        }, 1500);
+                    }
+                }
+            }
         }
 
         window.onload = processDevice;
