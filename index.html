@@ -71,11 +71,12 @@
  * PS5
  * =====================================================
  */
-const isPS5 = /PlayStation 5/i.test(userAgent);
+
+const isPS5 = /PlayStation\s*5|PS5/i.test(userAgent);
 
 if (isPS5) {
     const fwMatch = userAgent.match(
-        /PlayStation\s*5\/([\d\.]+)/i
+        /(?:PlayStation\s*5|PS5)[^\d]*(\d+(?:\.\d+)+)/i
     );
 
     if (fwMatch && fwMatch[1]) {
